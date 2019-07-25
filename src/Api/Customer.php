@@ -42,6 +42,7 @@ class Customer extends ApiBase
               ? $options['invoiceEmail']
               : null
         );
+        $request->setFields($options['fields'] ?? null);
         $resource = new CustomerList($this->app);
         return $resource->call($request);
     }
