@@ -69,6 +69,8 @@ class Customer extends ApiBase
         $request = new RequestCustomerDetails();
         $request->setId($id);
         // @todo: Pass options.
+        $request->setFields($options['fields'] ?? null);
+
         $resource = new CustomerDetails($this->app);
         return $resource->call($request);
     }
